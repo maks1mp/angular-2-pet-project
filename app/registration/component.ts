@@ -9,11 +9,12 @@ import { User } from './user';
   selector: 'registration-login',
   template: `
             <div>
-              <label [class.ok-field]="valid_field=='valid'" [class.err-field]="valid_field=='invalid'">Login:<input #name></label> <br>
-              <label [class.ok-field]="valid_field=='valid'" [class.err-field]="valid_field=='invalid'">Password:<input #pass></label> <br>
+              <label [class.ok-field]="valid_field=='valid'" [class.err-field]="valid_field=='invalid'">Login:<input type="text" #name></label> <br>
+              <label [class.ok-field]="valid_field=='valid'" [class.err-field]="valid_field=='invalid'">Password:<input type="password" #pass></label> <br>
               <button (click)="login(name.value, pass.value)">LOGIN</button>
               <button routerLink="/registration">REGISTRATION</button>
             </div>
+            <list></list>
             `,
 })
 

@@ -10,11 +10,13 @@ export class TasksService {
   }
   
   post(todo:string ,author:string):Promise<any>{
-    let active_user = TASKS.find((base)=>{
-      console.log(base);
-      return base.author === author;
-    });
-    active_user.tasks.push({todo:todo});
+    let active_user = TASKS.find((base)=>{ return base.author === author});
+    active_user.tasks.push({todo:todo, id:Math.round(Math.random()*1000), done:false});
     return Promise.resolve(todo);
+  }
+  changeStatus(id:number, author:string, status:boolean):void{
+    let active_user = TASKS.find((base)=>{  return base.author === author });
+    let active_task = active_user.tasks.find((task)=> task.id === id );
+    active_task.done = status;
   }
 }

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './registration/component';
 import { RegistrationComponent } from './registration/reg.component';
 import { UserTasks } from './tasks/component';
+import { UserInfo } from './registration/user.info.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +23,10 @@ const appRoutes: Routes = [
   {
     path: 'registration',
     component: RegistrationComponent,
+  },
+  {
+    path: 'info/:id',
+    component: UserInfo,
   }
 ];
 

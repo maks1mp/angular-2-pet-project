@@ -11,7 +11,8 @@ import { LoginComponent } from './registration/component';
 import { AppComponent } from './app.component';
 import { UserTasks } from './tasks/component';
 import { RegistrationComponent } from './registration/reg.component';
-
+import { UsersList } from './registration/users.list.component';
+import { UserInfo } from './registration/user.info.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { RegistrationComponent } from './registration/reg.component';
     routing,
   ],
   providers:  [ loginService, TasksService ],
-  declarations: [ AppComponent ,LoginComponent, UserTasks, RegistrationComponent ],
+  declarations: [ AppComponent ,LoginComponent, UserTasks, RegistrationComponent, UsersList, UserInfo ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

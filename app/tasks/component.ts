@@ -12,15 +12,19 @@ import { TasksService } from './service';
               ADD TASK <input type="text" #new_task> <button (click)="addTask(new_task.value)">ADD TASK</button>
               <hr>
               <ul>
-                <li *ngFor="let task of base">{{task.todo}}</li>
+                <li *ngFor="let task of base"><label [class.done]="task.done"> <input type="checkbox" [(ngModel)]="task.done" #checkbox (change)="change(checkbox.checked, task.id, author)">{{task.todo}}</label></li>
               </ul>
             </div>
-            `
+            `,
+  styles:[ `.done {text-decoration: line-through;} 
+            ul {list-style: none;}
+          ` ]
 })
 
 export class UserTasks implements OnInit { 
   author:string;
   base:any;
+  
   constructor(
     private tasksService:TasksService,
     private router:ActivatedRoute
@@ -41,5 +45,12 @@ export class UserTasks implements OnInit {
   }
   goBack():void {
     window.history.back();
+  }
+  change(value:any, id:number, author:string):void{
+    if (value) {
+      this.tasksService.changeStatus(id, author, true);
+    } else {
+      this.tasksService.changeStatus(id, author, false);
+    }
   }
 }
