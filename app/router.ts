@@ -5,6 +5,7 @@ import { LoginComponent } from './registration/component';
 import { RegistrationComponent } from './registration/reg.component';
 import { UserTasks } from './tasks/component';
 import { UserInfo } from './registration/user.info.component';
+import { GirlLiker } from './liker/component';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
   {
     path: 'info/:id',
     component: UserInfo,
+  },
+  {
+    path: 'liker',
+    component: GirlLiker
   }
 ];
 

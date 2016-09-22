@@ -13,6 +13,9 @@ import { UserTasks } from './tasks/component';
 import { RegistrationComponent } from './registration/reg.component';
 import { UsersList } from './registration/users.list.component';
 import { UserInfo } from './registration/user.info.component';
+import { GirlLiker } from './liker/component';
+import { RowCopmonent } from './liker/row.component';
+
 
 
 @NgModule({
@@ -22,7 +25,7 @@ import { UserInfo } from './registration/user.info.component';
     routing,
   ],
   providers:  [ loginService, TasksService ],
-  declarations: [ AppComponent ,LoginComponent, UserTasks, RegistrationComponent, UsersList, UserInfo ],
+  declarations: [ AppComponent ,LoginComponent, UserTasks, RegistrationComponent, UsersList, UserInfo, GirlLiker, RowCopmonent ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
